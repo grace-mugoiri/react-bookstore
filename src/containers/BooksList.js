@@ -7,6 +7,7 @@ import Book from '../components/Book';
 class BooksList extends React.Component {
   // eslint-disable-next-line no-restricted-syntax
   render() {
+    // eslint-disable-next-line arrow-body-style
     const books = this.props.books.map((book) => {
       return <Book key={book.id} book={book} handleBookRemoval={this.handleBookRemoval} />;
     });
@@ -29,10 +30,8 @@ class BooksList extends React.Component {
   }
 }
 
-const mapStateToProps = (state, ownProps) => {
-  return {
-    books: state.books,
-  };
-};
+const mapStateToProps = (state) => ({
+  books: state.books,
+});
 
 export default connect(mapStateToProps)(BooksList);
