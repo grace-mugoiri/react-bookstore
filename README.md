@@ -13,10 +13,19 @@ The page will reload if you make edits.<br />
 You will also see any lint errors in the console.
 
 ### tools used in this project
- - node.js
- - react
- - redux
- - eslint and stickler
+ - Node.js
+ - React
+ - React-DOM
+ - React-Create-App
+ - Redux
+ - npm
+ - CSS
+ - ES6
+
+ ### What the project entails
+ Simple web app that emphisizes on Front-End that will help organize and manage the data.
+ For purpose of being fast, dynamic and responsive the right material for this is React and
+ Redux.
 
 ### live version on heroku
 https://dashboard.heroku.com/apps/mugoiri-bookstore
