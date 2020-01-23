@@ -3,15 +3,23 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
-import rootReducer from './reducers/index';
-import App from './App';
+import rootReducer from './reducers';
+import App from './components/App';
 
-const generateID = () => Math.floor((Math.random() * 1000) + 1);
+const generateID = () => parseInt(Math.random() * 100, 10);
 
 const initialState = {
   books: [
-    { id: generateID(), title: 'Dont mess with the Zohan', category: 'Action' },
-    { id: generateID(), title: 'Frozen', category: 'Kids' },
+    {
+      id: generateID(),
+      title: 'Dont mess with the Zohan',
+      category: 'Action',
+    },
+    {
+      id: generateID(),
+      title: 'Frozen',
+      category: 'Kids',
+    },
   ],
 };
 

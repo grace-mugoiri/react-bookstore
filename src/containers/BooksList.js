@@ -18,7 +18,7 @@ class BooksList extends React.Component {
             <tr>
               <th>ID</th>
               <th>Title</th>
-              <th>Genre</th>
+              <th>Category</th>
             </tr>
           </thead>
           <tbody>

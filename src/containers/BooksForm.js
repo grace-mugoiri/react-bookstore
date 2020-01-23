@@ -1,22 +1,22 @@
+/* eslint-disable react/prefer-stateless-function */
 /* eslint-disable no-restricted-syntax */
-import React, { Component } from 'react';
+import React from 'react';
+import { connect } from 'react-redux';
 
-class BooksForm extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      bookGenres: ['Action and Adventure', 'Anthology', 'Chick lit', 'Crime', 'Drama', 'Fantasy'],
-    };
-  }
+const bookGenres = ['Action', 'Biography', 'History', 'Horror', 'Kids', 'Learning', 'Sci-Fi'];
 
+class BooksForm extends React.Component {
   render() {
-    const { bookGenres } = this.state;
+    // eslint-disable-next-line max-len
+    const bookOptions = bookGenres.map((category) => <option key={category} value={category}>{category}</option>);
+
     return (
-      <div className="bookForm">
+
+      <div className="book-form">
         <h2>Books Form:</h2>
         <form>
           <input type="text" name="title" />
-          <select name="category">{bookGenres}</select>
+          <select name="category">{bookOptions}</select>
           <input type="submit" />
         </form>
       </div>
@@ -24,4 +24,4 @@ class BooksForm extends Component {
   }
 }
 
-export default BooksForm;
+export default connect()(BooksForm);
