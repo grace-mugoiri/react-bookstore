@@ -1,3 +1,4 @@
+/* eslint-disable react/destructuring-assignment */
 /* eslint-disable react/prefer-stateless-function */
 /* eslint-disable no-restricted-syntax */
 import React from 'react';
@@ -20,7 +21,7 @@ class BooksForm extends React.Component {
   }
 
   handleChange(event) {
-    const { name } = event.target;
+    const { name } = event.target.name;
     this.setState({
       [name]: event.target.value,
     });
@@ -28,6 +29,7 @@ class BooksForm extends React.Component {
 
   handleSubmit(event) {
     event.preventDefault();
+    // eslint-disable-next-line react/prop-types
     this.props.createBook({
       id: generateID(),
       title: this.state.title,
@@ -50,7 +52,7 @@ class BooksForm extends React.Component {
       <div className="book-form">
         <h2>Books Form:</h2>
         <form onSubmit={this.handleSubmit}>
-          <input onChange={this.handleSubmit} type="text" name="title" />
+          <input onChange={this.handleChange} type="text" name="title" />
           <select onChange={this.handleChange} name="category">{bookOptions}</select>
           <input type="submit" />
         </form>
