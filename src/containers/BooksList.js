@@ -1,16 +1,24 @@
+/* eslint-disable no-restricted-syntax */
 /* eslint-disable react/prop-types */
 /* eslint-disable react/destructuring-assignment */
 import React from 'react';
 import { connect } from 'react-redux';
 import Book from '../components/Book';
+import { deleteBook } from '../actions';
 
 class BooksList extends React.Component {
-  // eslint-disable-next-line no-restricted-syntax
+  constructor(props) {
+    super(props);
+    this.handleBookRemoval = this.handleBookRemoval.bind(this);
+  }
+
+  handleBookRemoval(book) {
+    this.props.deleteBook(book);
+  }
+
   render() {
-    // eslint-disable-next-line arrow-body-style
-    const books = this.props.books.map((book) => {
-      return <Book key={book.id} book={book} handleBookRemoval={this.handleBookRemoval} />;
-    });
+    // eslint-disable-next-line max-len
+    const books = this.props.books.map((book) => <Book key={book.id} book={book} handleBookRemoval={this.handleBookRemoval} />);
     return (
       <div>
         <table>
@@ -30,8 +38,12 @@ class BooksList extends React.Component {
   }
 }
 
-const mapStateToProps = (state) => ({
+const mapStateToProps = (state, ownProps) => ({
   books: state.books,
 });
 
-export default connect(mapStateToProps)(BooksList);
+const mapDispatchProps = (dispatch) => ({
+  deleteBook: (book) => dispatch(deleteBook(book)),
+});
+
+export default connect(mapStateToProps, mapDispatchProps)(BooksList);
