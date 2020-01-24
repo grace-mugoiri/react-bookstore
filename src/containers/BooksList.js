@@ -38,7 +38,7 @@ class BooksList extends React.Component {
   }
 }
 
-const mapStateToProps = (state, ownProps) => ({
+const mapStateToProps = (state) => ({
   books: state.books,
 });
 

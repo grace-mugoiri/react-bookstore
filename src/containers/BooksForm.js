@@ -1,13 +1,22 @@
 /* eslint-disable react/destructuring-assignment */
 /* eslint-disable react/prefer-stateless-function */
 /* eslint-disable no-restricted-syntax */
+
 import React from 'react';
 import { connect } from 'react-redux';
 import { createBook } from '../actions';
 
-const bookGenres = ['Action', 'Biography', 'History', 'Horror', 'Kids', 'Learning', 'Sci-Fi'];
+const bookCategories = [
+  'Action',
+  'Biography',
+  'History',
+  'Horror',
+  'Kids',
+  'Learning',
+  'Sci-Fi',
+];
 
-const generateID = () => parseInt(Math.random() * 100, 10);
+const generateID = () => Math.floor((Math.random() * 1000) + 1);
 
 class BooksForm extends React.Component {
   constructor(props) {
@@ -16,12 +25,14 @@ class BooksForm extends React.Component {
       title: '',
       category: 'Action',
     };
+
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   handleChange(event) {
-    const { name } = event.target.name;
+    const { name } = event.target;
+
     this.setState({
       [name]: event.target.value,
     });
@@ -40,17 +51,16 @@ class BooksForm extends React.Component {
       title: '',
       category: 'Action',
     });
+
     event.target.reset();
   }
 
   render() {
-    // eslint-disable-next-line max-len
-    const bookOptions = bookGenres.map((category) => <option key={category} value={category}>{category}</option>);
+    const bookOptions = bookCategories.map((category) => <option key={`book-category-${category}`} value={category}>{category}</option>);
 
     return (
-
-      <div className="book-form">
-        <h2>Books Form:</h2>
+      <div>
+        <h3>Books form:</h3>
         <form onSubmit={this.handleSubmit}>
           <input onChange={this.handleChange} type="text" name="title" />
           <select onChange={this.handleChange} name="category">{bookOptions}</select>
@@ -61,8 +71,8 @@ class BooksForm extends React.Component {
   }
 }
 
-const mapDispatchProps = (dispatch) => ({
+const mapDispatchToProps = (dispatch) => ({
   createBook: (book) => dispatch(createBook(book)),
 });
 
-export default connect(null, mapDispatchProps)(BooksForm);
+export default connect(null, mapDispatchToProps)(BooksForm);
