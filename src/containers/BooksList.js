@@ -1,6 +1,4 @@
 /* eslint-disable no-restricted-syntax */
-/* eslint-disable react/prop-types */
-/* eslint-disable react/destructuring-assignment */
 import React from 'react';
 import { connect } from 'react-redux';
 import Book from '../components/Book';
@@ -17,7 +15,6 @@ class BooksList extends React.Component {
   }
 
   render() {
-    // eslint-disable-next-line max-len
     const books = this.props.books.map((book) => <Book key={book.id} book={book} handleBookRemoval={this.handleBookRemoval} />);
     return (
       <div>

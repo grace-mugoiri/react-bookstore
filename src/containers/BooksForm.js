@@ -1,4 +1,3 @@
-/* eslint-disable react/destructuring-assignment */
 /* eslint-disable react/prefer-stateless-function */
 /* eslint-disable no-restricted-syntax */
 
@@ -40,7 +39,6 @@ class BooksForm extends React.Component {
 
   handleSubmit(event) {
     event.preventDefault();
-    // eslint-disable-next-line react/prop-types
     this.props.createBook({
       id: generateID(),
       title: this.state.title,

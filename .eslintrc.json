@@ -18,6 +18,31 @@
 	  "import/no-unresolved": "off",
 	  "no-shadow": "off",
 	  "arrow-parens":"off",
-	  "no-restricted-syntax": ["error", "FunctionExpression", "WithStatement", "BinaryExpression[operator='in']"]
+	  "no-restricted-syntax": [
+		"error",
+		{
+			"selector": "FunctionExpression",
+			"message": "Function expressions are not allowed."
+		},
+		{
+			"selector": "CallExpression[callee.name='setTimeout'][arguments.length!=2]",
+			"message": "setTimeout must always be invoked with two arguments."
+		}
+	],
+	  "react/prop-types": 0,
+	  "import/extensions": 0,
+      "no-plusplus": ["error", { "allowForLoopAfterthoughts": true }],
+	  "max-classes-per-file": 0,
+	  "react/button-has-type": 0,
+	  "react/destructuring-assignment": 0,
+	  "react/no-access-state-in-setstate": 0,
+	  "react/no-array-index-key": 0,
+	  "react/no-unused-prop-types": 0,
+	  "react/jsx-props-no-spreading": 0,
+	  "arrow-body-style": 0,
+	  "no-console": 0,
+	  "max-len": 0,
+	  "object-curly-newline": 0,
+	  "operator-linebreak": ["error", "before"]
 	}
   }
