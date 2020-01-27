@@ -1,6 +1,4 @@
-/* eslint-disable react/prefer-stateless-function */
 /* eslint-disable no-restricted-syntax */
-
 import React from 'react';
 import { connect } from 'react-redux';
 import { createBook } from '../actions';
@@ -39,18 +37,19 @@ class BooksForm extends React.Component {
 
   handleSubmit(event) {
     event.preventDefault();
-    this.props.createBook({
+    const { title, category } = this.state;
+    const { createBook } = this.props;
+    const book = {
       id: generateID(),
-      title: this.state.title,
-      category: this.state.category,
-    });
+      title,
+      category,
+    };
 
+    createBook(book);
     this.setState({
       title: '',
       category: 'Action',
     });
-
-    event.target.reset();
   }
 
   render() {

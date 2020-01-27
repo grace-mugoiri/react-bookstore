@@ -1,3 +1,4 @@
+
 /* eslint-disable no-restricted-syntax */
 import React from 'react';
 import { connect } from 'react-redux';
@@ -11,10 +12,12 @@ class BooksList extends React.Component {
   }
 
   handleBookRemoval(book) {
-    this.props.deleteBook(book);
+    const { deleteBook } = this.props;
+    deleteBook(book);
   }
 
   render() {
+    // eslint-disable-next-line max-len
     const books = this.props.books.map((book) => <Book key={book.id} book={book} handleBookRemoval={this.handleBookRemoval} />);
     return (
       <div>
