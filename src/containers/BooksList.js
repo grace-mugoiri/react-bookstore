@@ -1,4 +1,3 @@
-
 /* eslint-disable no-restricted-syntax */
 import React from 'react';
 import { connect } from 'react-redux';
@@ -17,8 +16,11 @@ class BooksList extends React.Component {
   }
 
   render() {
-    // eslint-disable-next-line max-len
-    const books = this.props.books.map((book) => <Book key={book.id} book={book} handleBookRemoval={this.handleBookRemoval} />);
+    const bookComponents = this.props.books.map((book => {
+      const { id } = book;
+      return <Book key={id} book={book} handleBookRemoval={this.handleBookRemoval} />;
+    }));
+
     return (
       <div>
         <table>
@@ -30,7 +32,7 @@ class BooksList extends React.Component {
             </tr>
           </thead>
           <tbody>
-            {books}
+            {bookComponents}
           </tbody>
         </table>
       </div>
