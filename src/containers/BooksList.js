@@ -16,7 +16,8 @@ class BooksList extends React.Component {
   }
 
   render() {
-    const bookComponents = this.props.books.map((book => {
+    const { books } = this.props;
+    const bookComponents = books.map((book => {
       const { id } = book;
       return <Book key={id} book={book} handleBookRemoval={this.handleBookRemoval} />;
     }));
