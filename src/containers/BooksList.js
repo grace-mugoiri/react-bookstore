@@ -51,8 +51,14 @@ const mapDispatchProps = (dispatch) => ({
 });
 
 BooksList.propTypes = {
+  books: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number.isRequired,
+      title: PropTypes.string.isRequired,
+      category: PropTypes.string.isRequired,
+    }).isRequired,
+  ).isRequired,
   deleteBook: PropTypes.func.isRequired,
-  books: PropTypes.string.isRequired,
 };
 
 export default connect(mapStateToProps, mapDispatchProps)(BooksList);

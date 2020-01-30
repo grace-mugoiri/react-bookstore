@@ -1,6 +1,7 @@
-/* eslint-disable no-restricted-syntax */
 /* eslint-disable react/prefer-stateless-function */
+/* eslint-disable no-restricted-syntax */
 import React from 'react';
+import PropTypes from 'prop-types';
 
 class Book extends React.Component {
   render() {
@@ -19,5 +20,15 @@ class Book extends React.Component {
     );
   }
 }
+
+Book.propTypes = {
+  book: PropTypes.shape({
+    id: PropTypes.number.isRequired,
+    title: PropTypes.string.isRequired,
+    category: PropTypes.string.isRequired,
+  }).isRequired,
+  handleBookRemoval: PropTypes.func.isRequired,
+  // removeBook: PropTypes.func.isRequired,
+};
 
 export default Book;
