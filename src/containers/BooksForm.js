@@ -1,5 +1,6 @@
 /* eslint-disable no-restricted-syntax */
 import React from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { createBook } from '../actions';
 
@@ -71,5 +72,9 @@ class BooksForm extends React.Component {
 const mapDispatchToProps = (dispatch) => ({
   createBook: (book) => dispatch(createBook(book)),
 });
+
+BooksForm.propTypes = {
+  createBook: PropTypes.func.isRequired,
+};
 
 export default connect(null, mapDispatchToProps)(BooksForm);
