@@ -28,7 +28,6 @@ Book.propTypes = {
     category: PropTypes.string.isRequired,
   }).isRequired,
   handleBookRemoval: PropTypes.func.isRequired,
-  // removeBook: PropTypes.func.isRequired,
 };
 
 export default Book;
