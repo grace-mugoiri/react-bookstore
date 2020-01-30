@@ -1,5 +1,6 @@
 /* eslint-disable no-restricted-syntax */
 import React from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import Book from '../components/Book';
 import { deleteBook } from '../actions';
@@ -48,5 +49,10 @@ const mapStateToProps = (state) => ({
 const mapDispatchProps = (dispatch) => ({
   deleteBook: (book) => dispatch(deleteBook(book)),
 });
+
+BooksList.propTypes = {
+  deleteBook: PropTypes.func.isRequired,
+  books: PropTypes.string.isRequired,
+};
 
 export default connect(mapStateToProps, mapDispatchProps)(BooksList);
