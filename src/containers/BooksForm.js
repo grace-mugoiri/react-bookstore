@@ -3,6 +3,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { createBook } from '../actions';
+import '../styleAssets/BooksForm.css';
 
 const bookCategories = [
   'Action',
@@ -58,7 +59,7 @@ class BooksForm extends React.Component {
 
     return (
       <div>
-        <h3>Books form:</h3>
+        <h3> Bookstore CMS </h3>
         <form onSubmit={this.handleSubmit}>
           <input onChange={this.handleChange} type="text" name="title" />
           <select onChange={this.handleChange} name="category">{bookOptions}</select>

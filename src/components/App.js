@@ -8,8 +8,16 @@ import BooksList from '../containers/BooksList';
 function App() {
   return (
     <div className="App">
-      <BooksForm />
-      <BooksList />
+      <div className="App-header">
+
+        <div className="App-logo"> Bookstore CMS </div>
+        <div className="subtitle-one"> BOOKS </div>
+        <div className="subtitle-two"> CATEGORIES </div>
+      </div>
+      <div className="App-content">
+        <BooksForm />
+        <BooksList />
+      </div>
     </div>
   );
 }
