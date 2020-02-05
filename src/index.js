@@ -20,6 +20,11 @@ const initialState = {
       title: 'Frozen',
       category: 'Kids',
     },
+    {
+      id: generateID(),
+      title: 'Siera Leonne Diamonds',
+      category: 'History',
+    },
   ],
 };
 

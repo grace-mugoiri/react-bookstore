@@ -24,6 +24,13 @@
   display: flex;
 }
 
+.App-content {
+	padding: 40px;
+	border-radius: 4px;
+	box-shadow: #ffffff;
+	background-color: #ffffff;
+}
+
 .subtitle-one, .subtitle-two {
 	width: 60px;
 	height: 15px;
@@ -46,11 +53,3 @@
 	color: grey;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}

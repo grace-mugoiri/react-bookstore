@@ -59,7 +59,7 @@ class BooksForm extends React.Component {
 
     return (
       <div>
-        <h3> Bookstore CMS </h3>
+        <h3> ADD NEW BOOK </h3>
         <form onSubmit={this.handleSubmit}>
           <input onChange={this.handleChange} type="text" name="title" />
           <select onChange={this.handleChange} name="category">{bookOptions}</select>
