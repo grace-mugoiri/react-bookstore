@@ -11,11 +11,11 @@ const bookCategories = [
   'Sci-Fi',
 ];
 
-const filterCategories = bookCategories.concat('All');
+const filterCategories = ['All', ...bookCategories];
 
 const CategoryFilter = ({ handleFilterChange }) => {
   const options = filterCategories.map((category) => (
-    <option key={`filter-category-${category}`} value={category}>
+    <option key={category} value={category}>
       {category}
     </option>
   ));

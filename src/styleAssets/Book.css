@@ -132,11 +132,7 @@
 	width: 60%;
   }
 
-  .second {
-	width: 20%;
-  }
-
-  .third {
+  .second, .third {
 	width: 20%;
   }
 
