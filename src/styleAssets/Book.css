@@ -39,7 +39,7 @@
   }
 
   .title {
-	width: 197px;
+	width: 365px;
 	height: 29px;
 	font-family: RobotoSlab;
 	font-size: 22px;
@@ -113,6 +113,11 @@
 	color: #4386bf;
   }
 
+.remove button {
+	color: #4386bf;
+	border: none;
+}
+
   .edit {
 	width: 27px;
 	height: 19px;
@@ -128,11 +133,11 @@
 	color: #4386bf;
   }
 
-  .first {
+  .first-div {
 	width: 60%;
   }
 
-  .second, .third {
+  .second-div, .third-div {
 	width: 20%;
   }
 
@@ -152,4 +157,3 @@
 	padding: 10px;
 	border-radius: 3px;
   }
-

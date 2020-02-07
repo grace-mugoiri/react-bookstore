@@ -1,0 +1,13 @@
+.filter-class {
+	padding-top: 37px ;
+	width: 300px;
+	height: 1px;
+	border-radius: 4px;
+	box-shadow: 0 0 60px 0 #0000000d;
+	border: solid 1px #ffffff;
+	padding-bottom: 20px;
+}
+
+.filter-class select {
+	height: 30px;
+}

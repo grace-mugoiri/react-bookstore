@@ -9,7 +9,7 @@ class Book extends React.Component {
     const { book: { id, title, category }, handleBookRemoval } = this.props;
     return (
       <div className="lesson-panel">
-        <div className="first">
+        <div className="first-div">
           <h5 className="cat">{category}</h5>
           <h2 className="title">{title}</h2>
           <p>Tesa Kent</p>
@@ -19,10 +19,10 @@ class Book extends React.Component {
             <div className="edit"> Edit </div>
           </div>
         </div>
-        <div className="second" />
-        <div className="third">
+        <div className="second-div" />
+        <div className="third-div">
           <h5 className="curChap">CURRENT CHAPTER</h5>
-          <h5 className="chapNum"> CHAPTER 17</h5>
+          <h4 className="chapNum">CHAPTER 17</h4>
           <div className="update">UPDATE PROGRESS</div>
         </div>
       </div>
