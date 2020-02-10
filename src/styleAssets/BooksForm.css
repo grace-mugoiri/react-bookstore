@@ -1,0 +1,50 @@
+
+  #input-book {
+	border-radius: 4px;
+	box-shadow: 0 0 60px 0 rgba(0, 0, 0, 0.05);
+	color: gray;
+  }
+
+  #input-title {
+	width: 571px;
+	height: 45px;
+	font-family: Montserrat;
+	font-size: 16px;
+	font-weight: normal;
+	font-stretch: normal;
+	font-style: normal;
+	line-height: normal;
+	letter-spacing: -0.15px;
+	color: #c4c4c4;
+	margin-right: 3%;
+  }
+
+  select {
+	margin-right: 10px;
+	height: 45px;
+	width: 20%;
+	font-size: 18px;
+	color: #c4c4c4;
+  }
+
+  #add-book {
+	width: 150px;
+	height: 28px;
+	font-family: RobotoSlab;
+	font-size: 13px;
+	font-weight: bold;
+	font-stretch: normal;
+	font-style: normal;
+	line-height: normal;
+	letter-spacing: 0.5px;
+	background-color: #0290ff;
+	color: white;
+	text-align: center;
+	border-radius: 3px;
+	margin-left: 16%;
+  }
+
+  .error {
+	  color: orangered;
+  }
+
