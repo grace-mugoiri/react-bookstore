@@ -1,8 +1,10 @@
+/* eslint-disable react/destructuring-assignment */
 /* eslint-disable no-restricted-syntax */
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { createBook } from '../actions';
+import '../styleAssets/BooksForm.css';
 
 const bookCategories = [
   'Action',
@@ -22,6 +24,7 @@ class BooksForm extends React.Component {
     this.state = {
       title: '',
       category: 'Action',
+      error: null,
     };
 
     this.handleChange = this.handleChange.bind(this);
@@ -37,8 +40,19 @@ class BooksForm extends React.Component {
   }
 
   handleSubmit(event) {
-    event.preventDefault();
     const { title, category } = this.state;
+    if (title === '') {
+      this.setState({
+        error: 'Title cannot be blank',
+      });
+    } else {
+      this.setState({
+        error: null,
+      });
+    }
+
+    event.preventDefault();
+
     const { createBook } = this.props;
     const book = {
       id: generateID(),
@@ -58,11 +72,12 @@ class BooksForm extends React.Component {
 
     return (
       <div>
-        <h3>Books form:</h3>
+        <h3 id="input-book"> ADD NEW BOOK </h3>
+        <div className="error">{this.state.error}</div>
         <form onSubmit={this.handleSubmit}>
-          <input onChange={this.handleChange} type="text" name="title" />
+          <input onChange={this.handleChange} type="text" id="input-title" name="title" placeholder="Book title" />
           <select onChange={this.handleChange} name="category">{bookOptions}</select>
-          <input type="submit" />
+          <input type="submit" id="add-book" value="ADD BOOK" />
         </form>
       </div>
     );

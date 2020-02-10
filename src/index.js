@@ -20,7 +20,13 @@ const initialState = {
       title: 'Frozen',
       category: 'Kids',
     },
+    {
+      id: generateID(),
+      title: 'Siera Leonne Diamonds',
+      category: 'History',
+    },
   ],
+  filter: 'All',
 };
 
 const store = createStore(rootReducer, initialState);
